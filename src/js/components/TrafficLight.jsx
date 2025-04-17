@@ -6,13 +6,19 @@ const TrafficLight = () => {
     const [isYellow, setIsYellow] = useState(false)
 
     const handleClickRed = () => {
-        setIsRed(!isRed)
+        setIsYellow(false)
+        setIsRed(true)
+        setIsGreen(false)
     }
     const handleClickYellow = () => {
-        setIsYellow(!isYellow)
+        setIsYellow(true)
+        setIsRed(false)
+        setIsGreen(false)
     }
     const handleClickGreen = () => {
-        setIsGreen(!isGreen)
+        setIsGreen(true)
+        setIsRed(false)
+        setIsYellow(false)
     }
 
 
@@ -25,10 +31,10 @@ const TrafficLight = () => {
                     <button className={`btn ${isRed ? "btn-danger" : "btn-dark"} glow-red my-3 btn-danger rounded-circle w-75 h-75 border border-danger`} onClick={handleClickRed}></button>
                 </div>
                 <div className="row">
-                    <button className={`btn ${isYellow ? "btn-warning" : "btn-dark"} my-3 btn-warning rounded-circle w-75 h-75 border border-warning`} onClick={handleClickYellow}></button>
+                    <button className={`btn ${isYellow ? "btn-warning" : "btn-dark"} glow-yellow my-3 btn-warning rounded-circle w-75 h-75 border border-warning`} onClick={handleClickYellow}></button>
                 </div>
                 <div className="row">
-                    <button className={`btn ${isGreen ? "btn-success" : "btn-dark"} my-3 btn-success rounded-circle w-75 h-75 border border-success`} onClick={handleClickGreen}></button>
+                    <button className={`btn ${isGreen ? "btn-success" : "btn-dark"} glow-green my-3 btn-success rounded-circle w-75 h-75 border border-success`} onClick={handleClickGreen}></button>
                 </div>
             </div>
 
